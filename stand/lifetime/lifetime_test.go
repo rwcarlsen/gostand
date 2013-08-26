@@ -50,3 +50,16 @@ func TestNever(t *testing.T) {
 		t.Errorf("Value of DeathTime - expected %v, got %v", 0, death)
 	}
 }
+
+func TestMid(t *testing.T) {
+	f := &Fac{50, 70, 299, 499}
+
+	s := new(Stand)
+
+	s.SetFac(f)
+	results := s.Run().(*Result)
+
+	if death := results.DeathTime; death != 490 {
+		t.Errorf("Value of DeathTime - expected %v, got %v", 0, death)
+	}
+}
